@@ -169,6 +169,8 @@ public class ResponseSignatureAdvice {
 
 		JWTSignatureVerifyRequestDto jwtSignatureVerifyRequestDto = new JWTSignatureVerifyRequestDto();
 		jwtSignatureVerifyRequestDto.setJwtSignatureData(signature);
+		System.out.println("actualData: "+actualData.length());
+		LOGGER.info("actualData: ... {}", actualData.length());
 		jwtSignatureVerifyRequestDto.setActualData(CryptoUtil.encodeBase64(actualData.getBytes(StandardCharsets.UTF_8)));
 		jwtSignatureVerifyRequestDto.setCertificateData(certificateDto.getCertificate());
 
